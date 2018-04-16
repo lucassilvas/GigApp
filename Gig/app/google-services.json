@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "717425588320",
+    "firebase_url": "https://gig-app-73d46.firebaseio.com",
+    "project_id": "gig-app-73d46",
+    "storage_bucket": "gig-app-73d46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717425588320:android:fed12b0d376c80b0",
+        "android_client_info": {
+          "package_name": "com.example.lucas.gigapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717425588320-54b3firvto1jj0o57dang9r6ufb71slh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lucas.gigapp",
+            "certificate_hash": "b36fc8651f7574e0346305fea0338a6bde31313b"
+          }
+        },
+        {
+          "client_id": "717425588320-t6edg1m0r0oac5rssv7h5reoaa50qdkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmyvAP1Nd6nv7cfoHTRA9-Ub-5hDS0mRY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717425588320-t6edg1m0r0oac5rssv7h5reoaa50qdkr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
