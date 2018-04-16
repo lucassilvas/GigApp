@@ -34,7 +34,6 @@ dependencies {
 
     compile 'com.google.firebase:firebase-auth:11.8.0'
 
-
     //required support lib modules
     implementation "com.android.support:appcompat-v7:${"27.0.2"}"
     implementation "com.android.support:recyclerview-v7:${"27.0.2"}"
@@ -51,4 +50,5 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
 

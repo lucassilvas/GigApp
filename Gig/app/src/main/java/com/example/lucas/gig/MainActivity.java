@@ -24,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button cadastrese = (Button)findViewById(R.id.btn_cadastrar);
-
-        cadastrese.setOnClickListener(new View.OnClickListener(){
+        Button btn_cadastrar = (Button)findViewById(R.id.btn_cadastrar);
+        btn_cadastrar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent cadastrarActivity = new Intent(MainActivity.this, CadastrarActivity.class);
