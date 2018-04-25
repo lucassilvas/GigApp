@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
-    tools:context="com.example.lucas.gig.MainActivity">
+    tools:context="com.example.lucas.gig.activitys.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -30,7 +30,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_user"
-        android:hint="Usuário"
+        android:hint="Email"
         android:textAlignment="center"
         android:textColor="#555858"
         android:textSize="15sp"
@@ -47,6 +47,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_user"
         android:hint="Senha"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textColor="#555858"
         android:textSize="15dp"

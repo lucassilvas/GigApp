@@ -1,4 +1,4 @@
-package com.example.lucas.gig;
+package com.example.lucas.gig.activitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.lucas.gig.R;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -16,7 +17,6 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 
 public class BandaActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +37,7 @@ public class BandaActivity extends AppCompatActivity {
         //itens do drawer
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withName("Início").withIcon(FontAwesome.Icon.faw_home);
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withName("Perfil").withIcon(FontAwesome.Icon.faw_user);
+
 
         Drawer result = new DrawerBuilder()
                 //propriedades do drawer
