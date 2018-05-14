@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activitys.BandaActivity" />
-        <activity android:name=".activitys.CadastrarActivity"></activity>
+        <activity android:name=".activitys.CadastrarActivity" />
+        <activity android:name=".activitys.PerfilActivity"></activity>
     </application>
 
 </manifest>

@@ -60,11 +60,10 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
         final String passwordStr  = senha.getText().toString().trim();
         final String nomeStr  = nome.getText().toString().trim();
         final String sobrenomeStr  = sobrenome.getText().toString().trim();
-        final String usuarioStr  = usuario.getText().toString().trim();
 
 
         //verifica se os campos estão vazios
-        if(TextUtils.isEmpty(emailStr) || TextUtils.isEmpty(passwordStr) || TextUtils.isEmpty(nomeStr) || TextUtils.isEmpty(sobrenomeStr) || TextUtils.isEmpty(usuarioStr)){
+        if(TextUtils.isEmpty(emailStr) || TextUtils.isEmpty(passwordStr) || TextUtils.isEmpty(nomeStr) || TextUtils.isEmpty(sobrenomeStr)){
             Toast.makeText(this, "Erro ao se cadastrar",Toast.LENGTH_LONG).show();
             return;
         }
@@ -86,7 +85,6 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
                             DatabaseReference currentUserDB = mDatabase.child(firebaseAuth.getCurrentUser().getUid());
                             currentUserDB.child("nome").setValue(nomeStr);
                             currentUserDB.child("sobrenome").setValue(sobrenomeStr);
-                            currentUserDB.child("usuario").setValue(usuarioStr);
 
 
                             Toast.makeText(CadastrarActivity.this, "Sucesso",Toast.LENGTH_LONG).show();

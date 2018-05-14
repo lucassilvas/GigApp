@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 
 public class Usuario {
-    private String usuario;
     private String uid; // Vai ser gerado pelo auth do firebase;
     private String nome;
     private String sobrenome;
@@ -18,9 +17,6 @@ public class Usuario {
     //Métodos SET
     public void setUid(String uid) {
         this.uid = uid;
-    }
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
     }
     public void setNome(String nome) {
         this.nome = nome;
@@ -69,9 +65,6 @@ public class Usuario {
     }
     public String getUid() {
         return uid;
-    }
-    public String getUsuario() {
-        return usuario;
     }
     public String getSobrenome() {
         return sobrenome;
