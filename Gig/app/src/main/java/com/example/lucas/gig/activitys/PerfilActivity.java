@@ -97,13 +97,17 @@ public class PerfilActivity extends AppCompatActivity {
         nomeUser = (TextView) findViewById(R.id.nomeUser);
         sobrenomeUser = (TextView) findViewById(R.id.sobrenome);
 
+
+        //pega o usuario atual
         mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser() != null) {
             mDatabase = FirebaseDatabase.getInstance().getReference().child("usuarios");
+            //vai no banco de dados e pega o filho correspondente ao UID do usuario logado
             mDatabase.child(mAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @SuppressLint("SetTextI18n")
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Muda o texte que está no textview para o que está salvo no banco de dados
                     nomeUser.setText(String.valueOf((String)dataSnapshot.child("nome").getValue()) +" "+ String.valueOf((String)dataSnapshot.child("sobrenome").getValue()));
                 }
 
