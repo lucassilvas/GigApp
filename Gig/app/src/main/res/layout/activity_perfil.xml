@@ -51,7 +51,6 @@
                     android:id="@+id/nomeUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nome do Restaurante"
                     android:textColor="@color/md_black_1000"
                     android:textSize="20dp" />
 

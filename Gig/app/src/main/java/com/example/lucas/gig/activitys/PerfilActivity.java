@@ -1,6 +1,8 @@
 package com.example.lucas.gig.activitys;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -34,10 +36,9 @@ public class PerfilActivity extends AppCompatActivity {
     private Drawer result = null;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private String userUid;
-    private Query query;
-    private String mUserKey;
+    private FirebaseAuth.AuthStateListener mAuthListener;
     private TextView nomeUser;
+    private TextView sobrenomeUser;
     private static final String TAG = "teste";
 
     @Override
@@ -93,6 +94,25 @@ public class PerfilActivity extends AppCompatActivity {
                 .build();
         result.addStickyFooterItem(new PrimaryDrawerItem().withName("Sair"));
 
+        nomeUser = (TextView) findViewById(R.id.nomeUser);
+        sobrenomeUser = (TextView) findViewById(R.id.sobrenome);
+
+        mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() != null) {
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("usuarios");
+            mDatabase.child(mAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @SuppressLint("SetTextI18n")
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    nomeUser.setText(String.valueOf((String)dataSnapshot.child("nome").getValue()) +" "+ String.valueOf((String)dataSnapshot.child("sobrenome").getValue()));
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
 
     }
 }
