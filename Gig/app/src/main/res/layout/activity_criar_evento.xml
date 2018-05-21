@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lucas.gig.activitys.CriarEventoActivity">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/nomeEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Evento"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/horarioInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:hint="Horário de início"
+        android:inputType="datetime"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEvento"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/horarioTermino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:hint="Horário de término"
+        android:inputType="datetime"
+        app:layout_constraintStart_toEndOf="@+id/horarioInicio"
+        tools:layout_editor_absoluteY="61dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/atracoes"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Atração"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/horarioInicio"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/descricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Descrição"
+        android:inputType="text"
+        
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="259dp" />
+
+</android.support.constraint.ConstraintLayout>

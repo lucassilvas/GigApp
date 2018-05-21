@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".activitys.BandaActivity" />
         <activity android:name=".activitys.CadastrarActivity" />
-        <activity android:name=".activitys.PerfilActivity"></activity>
+        <activity android:name=".activitys.PerfilActivity" />
+        <activity android:name=".activitys.CriarEventoActivity"></activity>
     </application>
 
 </manifest>

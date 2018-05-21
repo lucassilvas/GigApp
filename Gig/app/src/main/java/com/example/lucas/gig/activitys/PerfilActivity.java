@@ -107,8 +107,9 @@ public class PerfilActivity extends AppCompatActivity {
                 @SuppressLint("SetTextI18n")
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    // Muda o texte que está no textview para o que está salvo no banco de dados
+                    // Muda o texto que está no textview para o que está salvo no banco de dados
                     nomeUser.setText(String.valueOf((String)dataSnapshot.child("nome").getValue()) +" "+ String.valueOf((String)dataSnapshot.child("sobrenome").getValue()));
+                    //AJEITAR A PARTE DE AVALIAÇÃO
                 }
 
                 @Override
