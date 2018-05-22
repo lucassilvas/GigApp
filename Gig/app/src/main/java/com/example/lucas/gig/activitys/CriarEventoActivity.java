@@ -1,5 +1,5 @@
 package com.example.lucas.gig.activitys;
-
+//AJEITAR A DESCRICAO COLOCANDO COMO UMA CAIXA DE TEXTO
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
