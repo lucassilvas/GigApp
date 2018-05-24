@@ -1,11 +1,23 @@
 package com.example.lucas.gig.activitys;
-//AJEITAR A DESCRICAO COLOCANDO COMO UMA CAIXA DE TEXTO
+/*
+
+
+
+
+NÃO MEXI NO BANCO DE DADOS
+APENAS SALVEI NAS VARIAS CORRETAS OS EDITSTEXTS RESPECTIVOS
+BY:WILLIAM
+
+
+
+
+*/
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
+import android.widget.EditText;
 import com.example.lucas.gig.R;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -18,11 +30,24 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 public class CriarEventoActivity extends AppCompatActivity {
 
     private Drawer result;
+    private EditText nomeEvento;
+    private EditText horarioInicio;
+    private EditText horarioTermino;
+    private EditText atracoes;
+    private EditText descricao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criar_evento);
+
+
+        nomeEvento    = (EditText) findViewById(R.id.nomeEvento);
+        horarioInicio = (EditText) findViewById(R.id.horarioInicio);
+        horarioTermino= (EditText) findViewById(R.id.horarioTermino);
+        atracoes      = (EditText) findViewById(R.id.atracoes);
+        descricao     = (EditText) findViewById(R.id.descricao);
 
         //cria a barra de toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

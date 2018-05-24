@@ -118,6 +118,7 @@ public class PerfilActivity extends AppCompatActivity {
                 }
             });
         }
+     result.setSelection(2);
 
     }
 }
