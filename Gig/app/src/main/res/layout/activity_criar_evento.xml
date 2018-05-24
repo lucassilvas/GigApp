@@ -35,15 +35,6 @@
         app:layout_constraintStart_toEndOf="@+id/horarioInicio"
         tools:layout_editor_absoluteY="61dp" />
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/atracoes"
-        android:layout_width="105dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Atrações"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/horarioInicio"
-        tools:layout_editor_absoluteX="0dp" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/descricao"
@@ -52,7 +43,30 @@
         android:layout_marginTop="8dp"
         android:hint="Descrição"
         android:inputType="textMultiLine"
-        app:layout_constraintTop_toBottomOf="@+id/atracoes"
+        app:layout_constraintTop_toBottomOf="@+id/horarioInicio"
         tools:layout_editor_absoluteX="0dp" />
 
+    <Button
+        android:id="@+id/criarEvento"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/md_blue_900"
+        android:text="Criar Evento"
+        android:textColor="@color/md_white_1000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="179dp" />
+
+    <Button
+        android:id="@+id/cancelar"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/md_red_900"
+        android:text="Cancelar"
+        android:textColor="@color/md_white_1000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/criarEvento" />
 </android.support.constraint.ConstraintLayout>

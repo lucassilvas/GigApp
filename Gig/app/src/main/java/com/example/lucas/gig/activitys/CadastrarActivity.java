@@ -44,8 +44,8 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
 
-        firebaseAuth = FirebaseAuth.getInstance();
 
+        firebaseAuth = FirebaseAuth.getInstance();
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.senha);
         nome = (EditText) findViewById(R.id.nome);
@@ -54,11 +54,11 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
         tipoComum = (RadioButton) findViewById(R.id.typeComum);
         tipoEstabelecimento = (RadioButton) findViewById(R.id.typeEstabelecimento);
         tipoMusico = (RadioButton) findViewById(R.id.typeMusico);
-
         continuar = (Button) findViewById(R.id.continuar);
         progressLogin = new ProgressDialog(this);
         continuar.setOnClickListener(this);
     }
+
 
     //função para registrar um usuário
     private void registerUser(){
@@ -68,6 +68,7 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
         final String nomeStr  = nome.getText().toString().trim();
         final String sobrenomeStr  = sobrenome.getText().toString().trim();
         final String nascimentoStr = nascimento.getText().toString();
+
 
         //verifica se os campos estão vazios
         if(TextUtils.isEmpty(emailStr) || TextUtils.isEmpty(passwordStr) || TextUtils.isEmpty(nomeStr) || TextUtils.isEmpty(sobrenomeStr)){
@@ -87,12 +88,13 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
                         if(task.isSuccessful()){
 
                             firebaseAuth.signInWithEmailAndPassword(emailStr, passwordStr);
-
                             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("usuarios");
                             DatabaseReference currentUserDB = mDatabase.child(firebaseAuth.getCurrentUser().getUid());
                             currentUserDB.child("nome").setValue(nomeStr);
                             currentUserDB.child("sobrenome").setValue(sobrenomeStr);
                             currentUserDB.child("nascimento").setValue(nascimentoStr);
+
+
                             //Verificando o tipo do usuario
                             if (tipoDoUsuario(tipoComum)==1){
                                 currentUserDB.child("tipoUsuario").setValue("Comum");
@@ -116,10 +118,9 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
                 });
     }
     public int tipoDoUsuario(View view) {
-        // Is the button now checked?
+        // VERIFICA QUAL BOTÃO ESTÁ MARCADO
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.typeComum:
                 if (checked)
@@ -138,7 +139,7 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
     }
 
 
-    //chama o a função para registrar um usuário
+    //chama a função para registrar um usuário
     @Override
     public void onClick(View v) {
         registerUser();

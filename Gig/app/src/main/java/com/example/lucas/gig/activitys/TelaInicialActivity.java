@@ -19,7 +19,7 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class BandaActivity extends AppCompatActivity {
+public class TelaInicialActivity extends AppCompatActivity {
 
     private Drawer result;
 
@@ -37,11 +37,9 @@ public class BandaActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withTranslucentStatusBar(true)
                 .build();
-
         setSupportActionBar(toolbar);
 
         //itens do drawer
-
         result = new DrawerBuilder()
                 //propriedades do drawer
                 .withActivity(this)
@@ -57,13 +55,13 @@ public class BandaActivity extends AppCompatActivity {
                                 if(drawerItem != null){
                                     Intent intent = null;
                                     if(drawerItem.getIdentifier() == 1){
-                                        intent = new Intent(BandaActivity.this, BandaActivity.class);
+                                        intent = new Intent(TelaInicialActivity.this, TelaInicialActivity.class);
                                     }
                                     if(drawerItem.getIdentifier() == 2){
-                                        intent = new Intent(BandaActivity.this, PerfilActivity.class);
+                                        intent = new Intent(TelaInicialActivity.this, PerfilActivity.class);
                                     }
                                     if (intent != null) {
-                                        BandaActivity.this.startActivity(intent);
+                                        TelaInicialActivity.this.startActivity(intent);
                                     }
                                 }
                                 return false;
@@ -74,10 +72,8 @@ public class BandaActivity extends AppCompatActivity {
                 .withShowDrawerOnFirstLaunch(true)
                 .build();
         result.addStickyFooterItem(new PrimaryDrawerItem().withName("Sair"));
-
-
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
