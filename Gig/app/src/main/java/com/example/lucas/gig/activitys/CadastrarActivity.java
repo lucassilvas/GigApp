@@ -10,11 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.lucas.gig.R;
-import com.example.lucas.gig.usuarios.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,13 +24,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CadastrarActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference mDatabase;
     private EditText email;
     private EditText senha;
     private EditText nome;
     private EditText sobrenome;
     private EditText nascimento;
-    private Button continuar;
     private RadioButton tipoComum;
     private RadioButton tipoEstabelecimento;
     private RadioButton tipoMusico;
@@ -44,7 +40,7 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
 
-
+        Button continuar;
         firebaseAuth = FirebaseAuth.getInstance();
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.senha);
@@ -54,7 +50,7 @@ public class CadastrarActivity extends AppCompatActivity implements View.OnClick
         tipoComum = (RadioButton) findViewById(R.id.typeComum);
         tipoEstabelecimento = (RadioButton) findViewById(R.id.typeEstabelecimento);
         tipoMusico = (RadioButton) findViewById(R.id.typeMusico);
-        continuar = (Button) findViewById(R.id.continuar);
+        continuar = (Button) findViewById(R.id.cancelar);
         progressLogin = new ProgressDialog(this);
         continuar.setOnClickListener(this);
     }

@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toStartOf="@+id/sobrenome"
             app:layout_constraintHorizontal_bias="0.586"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/titulo"
             app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -46,7 +46,7 @@
             android:hint="Sobrenome"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/titulo"
             app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -132,13 +132,13 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="Ao clicar em Continuar, você aceita os Termos e a Política de Privacidade"
-            app:layout_constraintBottom_toTopOf="@+id/continuar"
+            app:layout_constraintBottom_toTopOf="@+id/cancelar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/typeUsers" />
 
         <Button
-            android:id="@+id/continuar"
+            android:id="@+id/cancelar"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginBottom="16dp"

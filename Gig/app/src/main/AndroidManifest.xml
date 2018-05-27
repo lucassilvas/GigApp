@@ -21,7 +21,9 @@
         <activity android:name=".activitys.BandaActivity" />
         <activity android:name=".activitys.CadastrarActivity" />
         <activity android:name=".activitys.PerfilActivity" />
-        <activity android:name=".activitys.CriarEventoActivity"></activity>
+        <activity android:name=".activitys.CriarEventoActivity" />
+        <activity android:name=".activitys.CriarContratoActivity" />
+        <activity android:name=".activitys.CriarContrato2Activity"></activity>
     </application>
 
 </manifest>

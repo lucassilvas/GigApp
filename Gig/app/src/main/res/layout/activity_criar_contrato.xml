@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lucas.gig.activitys.CriarContratoActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ConstraintLayout"
+        android:layout_width="368dp"
+        android:layout_height="551dp">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Criar contrato"
+            android:textColor="@color/md_black_1000"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/bairro"
+            android:layout_width="151dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:hint="Bairro"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/rua"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/numero"
+            android:layout_width="70dp"
+            android:layout_height="0dp"
+            android:hint="Nº"
+            android:inputType="text"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="291dp"
+            tools:layout_editor_absoluteY="214dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/estadoCivil"
+            android:layout_width="151dp"
+            android:layout_height="0dp"
+            android:hint="Estado Civil"
+            android:inputType="text"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="192dp"
+            tools:layout_editor_absoluteY="420dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/nacionalidade"
+            android:layout_width="151dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:hint="Nacionalidade"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/cpf"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/rg"
+            android:layout_width="151dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:hint="RG"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/cpf"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="351dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/cpf"
+            android:layout_width="151dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:hint="CPF"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@+id/bairro"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/estado"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="40dp"
+            android:hint="Estado"
+            android:inputType="text"
+            app:layout_constraintStart_toEndOf="@+id/cidade"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="145dp" />
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/nomeCompleto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Nome Completo"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/titulo"
+            app:met_floatingLabel="highlight"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/cidade"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:hint="Cidade"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/nomeCompleto"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/rua"
+            android:layout_width="245dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:hint="Rua"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/cidade"
+            app:met_floatingLabel="highlight"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <Button
+            android:id="@+id/continuar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/btn_login"
+            android:text="Continuar"
+            android:textColor="@color/md_white_1000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:background="@color/md_red_900"
+            android:text="Cancelar"
+            android:textColor="@color/md_white_1000"
+            app:layout_constraintEnd_toStartOf="@+id/continuar"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="499dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

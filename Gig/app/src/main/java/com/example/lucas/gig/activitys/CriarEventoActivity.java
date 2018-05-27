@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.example.lucas.gig.R;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -26,14 +25,12 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 public class CriarEventoActivity extends AppCompatActivity {
 
-    private Drawer result;
     private EditText nomeEvento;
     private EditText horarioInicio;
     private EditText horarioTermino;
-    private EditText atracoes;
     private EditText descricao;
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference mDatabase;
+
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -41,17 +38,17 @@ public class CriarEventoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criar_evento);
 
+        Drawer result;
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        nomeEvento    = (EditText) findViewById(R.id.nomeEvento);
-        horarioInicio = (EditText) findViewById(R.id.horarioInicio);
-        horarioTermino= (EditText) findViewById(R.id.horarioTermino);
-        descricao     = (EditText) findViewById(R.id.descricao);
+        nomeEvento    =  findViewById(R.id.nomeEvento);
+        horarioInicio =  findViewById(R.id.horarioInicio);
+        horarioTermino=  findViewById(R.id.horarioTermino);
+        descricao     =  findViewById(R.id.descricao);
 
 
 
         //cria a barra de toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         toolbar.setBackground(getResources().getDrawable(R.color.primary));
         toolbar.setTitle("Criar Evento");
 
@@ -114,7 +111,7 @@ public class CriarEventoActivity extends AppCompatActivity {
             Toast.makeText(this, "Erro ao se cadastrar",Toast.LENGTH_LONG).show();
             return;
         }
-        //CHAMADA À FUNÇÃO DE CADASTRO
+        //CHAMADA À FUNÇÃO DE CADASTRO NO BANCO
         cadastrarNovoEventoBD(nomeEventoStr,horarioInicioStr,horarioTerminoStr,descricaoStr);
     }
 
@@ -122,13 +119,18 @@ public class CriarEventoActivity extends AppCompatActivity {
     //FUNÇÃO QUE CADASTRA UM NOVO EVENTO NO BANCO
     private void cadastrarNovoEventoBD(String nomeEvento, String horaInicio, String horaTermino, String descricao) {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("eventos");
-        DatabaseReference currentUserDB = mDatabase.child(firebaseAuth.getCurrentUser().getUid());
-        currentUserDB.child("nome").setValue(nomeEvento);
-        currentUserDB.child("horaInicio").setValue(horaInicio);
-        currentUserDB.child("horaTermino").setValue(horaTermino);
-        currentUserDB.child("descricao").setValue(descricao);
+            DatabaseReference currentUserDB = mDatabase.child(firebaseAuth.getCurrentUser().getUid());
+            currentUserDB.child("nome").setValue(nomeEvento);
+            currentUserDB.child("horaInicio").setValue(horaInicio);
+            currentUserDB.child("horaTermino").setValue(horaTermino);
+            currentUserDB.child("descricao").setValue(descricao);
+
+    }
+    public void onClick(View v) {
+        registerEvent();
     }
 }
+
 
 
 
