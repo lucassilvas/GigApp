@@ -124,11 +124,12 @@
             android:id="@+id/cancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             android:background="@color/md_red_900"
             android:text="Cancelar"
             android:textColor="@color/md_white_1000"
             app:layout_constraintEnd_toStartOf="@+id/continuar"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="479dp" />
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>

@@ -117,7 +117,8 @@
             android:inputType="textPersonName"
             app:layout_constraintTop_toBottomOf="@+id/titulo"
             app:met_floatingLabel="highlight"
-            tools:layout_editor_absoluteX="16dp" />
+            tools:layout_editor_absoluteX="16dp"
+            tools:ignore="MissingConstraints" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/cidade"
