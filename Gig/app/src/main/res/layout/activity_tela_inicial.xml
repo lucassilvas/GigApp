@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lucas.gig.activitys.BandaActivity">
+    tools:context="com.example.lucas.gig.activitys.TelaInicialActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
 
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="56dp"
             android:id="@+id/toolbar"
             android:theme="@style/MyActionBar">
         </android.support.v7.widget.Toolbar>
