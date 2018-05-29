@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.lucas.gig.activitys.CriarContratoActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -117,8 +116,8 @@
             android:inputType="textPersonName"
             app:layout_constraintTop_toBottomOf="@+id/titulo"
             app:met_floatingLabel="highlight"
-            tools:layout_editor_absoluteX="16dp"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/cidade"
@@ -143,6 +142,11 @@
             app:met_floatingLabel="highlight"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="16dp" />
+
+
+
+
+
 
         <Button
             android:id="@+id/continuar"
@@ -171,4 +175,4 @@
 
 
     </android.support.constraint.ConstraintLayout>
-</LinearLayout>
+</ScrollView>

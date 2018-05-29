@@ -1,5 +1,5 @@
 package com.example.lucas.gig.activitys;
-//IMPORT
+
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -90,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent bandaActivity = new Intent(MainActivity.this, TelaInicialActivity.class);
-                            startActivity(bandaActivity);
+                            Intent TelaInicialActivity = new Intent(MainActivity.this, TelaInicialActivity.class);
+                            startActivity(TelaInicialActivity);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());

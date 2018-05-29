@@ -97,8 +97,8 @@ public class CriarEventoActivity extends AppCompatActivity {
     }
 
 
-    //FUNÇÃO PARA REGISTRAR UM EVENTO NO BANCO
-    private void registerEvent(){
+    //FUNÇÃO QUE PEGA OS VALORES DO EVENTO E SALVA EM VARIÁVEIS
+    private void criarEvento(){
         //CONVERTER O EDITTEXT PARA STRING
         final String nomeEventoStr = nomeEvento.getText().toString().trim();
         final String horarioInicioStr  = horarioInicio.getText().toString();
@@ -127,7 +127,7 @@ public class CriarEventoActivity extends AppCompatActivity {
 
     }
     public void onClick(View v) {
-        registerEvent();
+        criarEvento();
     }
 }
 
