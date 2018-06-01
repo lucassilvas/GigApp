@@ -43,7 +43,6 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView sobrenomeUser;
     private static final String TAG = "teste";
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -68,10 +67,11 @@ public class PerfilActivity extends AppCompatActivity {
                 //propriedades do drawer
                 .withActivity(this)
                 .withToolbar(toolbar)
+                .withHasStableIds(true)
                 .withAccountHeader(accountHeader)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName("Início").withIcon(FontAwesome.Icon.faw_home).withIdentifier(1).withSelectable(true),
-                        new PrimaryDrawerItem().withName("Perfil").withIcon(FontAwesome.Icon.faw_user).withIdentifier(2).withSelectable(false)
+                        new PrimaryDrawerItem().withName("Início").withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
+                        new PrimaryDrawerItem().withName("Perfil").withIcon(FontAwesome.Icon.faw_user).withIdentifier(2).withSelectable(true)
                 ).withOnDrawerItemClickListener( // quando clicar em algum item do menu fazer uma ação.
                         new Drawer.OnDrawerItemClickListener() {
                             @Override
@@ -86,6 +86,7 @@ public class PerfilActivity extends AppCompatActivity {
                                     }
                                     if (intent != null) {
                                         PerfilActivity.this.startActivity(intent);
+                                        result.closeDrawer();
                                     }
                                 }
                                 return false;
@@ -96,6 +97,7 @@ public class PerfilActivity extends AppCompatActivity {
                 .withShowDrawerOnFirstLaunch(true)
                 .build();
         result.addStickyFooterItem(new PrimaryDrawerItem().withName("Sair"));
+
 
         nomeUser = (TextView) findViewById(R.id.nomeUser);
         sobrenomeUser = (TextView) findViewById(R.id.sobrenome);
@@ -112,7 +114,6 @@ public class PerfilActivity extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     // Muda o texto que está no textview para o que está salvo no banco de dados
                     nomeUser.setText(String.valueOf((String)dataSnapshot.child("nome").getValue()) +" "+ String.valueOf((String)dataSnapshot.child("sobrenome").getValue()));
-                    //AJEITAR A PARTE DE AVALIAÇÃO
                 }
 
                 @Override
@@ -121,7 +122,5 @@ public class PerfilActivity extends AppCompatActivity {
                 }
             });
         }
-     result.setSelection(2);
-
     }
 }

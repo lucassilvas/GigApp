@@ -43,6 +43,7 @@ public class TelaInicialActivity extends AppCompatActivity {
                 //propriedades do drawer
                 .withActivity(this)
                 .withToolbar(toolbar)
+                .withHasStableIds(true)
                 .withAccountHeader(accountHeader)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName("Início").withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
@@ -61,6 +62,7 @@ public class TelaInicialActivity extends AppCompatActivity {
                                     }
                                     if (intent != null) {
                                         TelaInicialActivity.this.startActivity(intent);
+                                        return true;
                                     }
                                 }
                                 return false;
@@ -81,5 +83,9 @@ public class TelaInicialActivity extends AppCompatActivity {
         MenuItem item = menu.findItem(R.id.search);
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    Drawer getResult(){
+        return this.result;
     }
 }
