@@ -1,5 +1,6 @@
 package com.example.lucas.gig.activitys;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.lucas.gig.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -21,6 +28,9 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 public class TelaInicialActivity extends AppCompatActivity {
 
     private Drawer result;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +83,16 @@ public class TelaInicialActivity extends AppCompatActivity {
                 .withShowDrawerOnFirstLaunch(true)
                 .build();
         result.addStickyFooterItem(new PrimaryDrawerItem().withName("Sair"));
+
+        mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() != null) {
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("usuarios");
+            //vai no banco de dados e pega o filho correspondente ao UID do usuario logado
+            if(mDatabase.child(mAuth.getCurrentUser().getUid()).equals("Estabelecimento")){
+
+            }
+        }
+
     }
 
 
