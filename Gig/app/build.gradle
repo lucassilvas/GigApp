@@ -53,6 +53,10 @@ dependencies {
     implementation 'com.mikepenz:fontawesome-typeface:5.0.6.0@aar'     //FontAwesome
 
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    //BIBLIOTECA DO CHAT
+    implementation 'com.google.firebase:firebase-database:9.6.1'
+    implementation 'com.google.firebase:firebase-messaging:10.2.1'
+    implementation 'com.google.firebase:firebase-auth:9.6.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

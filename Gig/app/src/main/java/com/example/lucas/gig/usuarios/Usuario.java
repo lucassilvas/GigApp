@@ -7,12 +7,22 @@ import java.util.ArrayList;
  */
 
 public class Usuario {
-    private String uid; // Vai ser gerado pelo auth do firebase;
-    private String nome;
-    private String sobrenome;
+    public String uid; // Vai ser gerado pelo auth do firebase;
+    public String nome;
+    public String sobrenome;
+    public String firebaseToken;
     private String tipo; // Musico/Restaurante/Comum
     private ArrayList<Usuario> seguidores;
     private ArrayList<Usuario> seguindo;
+
+    public Usuario(String uid, String nome, String sobrenome, String firebaseToken) {
+        this.uid = uid;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.firebaseToken = firebaseToken;
+    }
+
+    public Usuario(){}
 
     //Métodos SET
     public void setUid(String uid) {
