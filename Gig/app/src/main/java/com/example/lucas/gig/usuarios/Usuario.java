@@ -1,12 +1,13 @@
 package com.example.lucas.gig.usuarios;
 
+
 import java.util.ArrayList;
 
 /**
  * Created by Lucas on 23/04/2018.
  */
 
-public class Usuario {
+public class Usuario  {
     public String uid; // Vai ser gerado pelo auth do firebase;
     public String nome;
     public String sobrenome;
