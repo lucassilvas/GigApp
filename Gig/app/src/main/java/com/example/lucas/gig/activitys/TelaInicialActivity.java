@@ -2,6 +2,7 @@ package com.example.lucas.gig.activitys;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -94,6 +95,15 @@ public class TelaInicialActivity extends AppCompatActivity {
             }
         }
 
+        FloatingActionButton floatingActionButton = (FloatingActionButton)findViewById(R.id.floatingButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapsActivity = new Intent(TelaInicialActivity.this, MapsActivity.class);
+                startActivity(mapsActivity);
+
+            }
+        });
     }
 
 
