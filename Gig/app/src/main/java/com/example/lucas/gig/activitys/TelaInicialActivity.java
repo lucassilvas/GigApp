@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.example.lucas.gig.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,7 +60,8 @@ public class TelaInicialActivity extends AppCompatActivity {
                 .withAccountHeader(accountHeader)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName("Início").withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName("Perfil").withIcon(FontAwesome.Icon.faw_user).withIdentifier(2)
+                        new PrimaryDrawerItem().withName("Perfil").withIcon(FontAwesome.Icon.faw_user).withIdentifier(2),
+                        new PrimaryDrawerItem().withName("Criar Evento").withIcon(FontAwesome.Icon.faw_plus).withIdentifier(3)
                 ).withOnDrawerItemClickListener(
                         new Drawer.OnDrawerItemClickListener() {
                             @Override
@@ -71,6 +73,9 @@ public class TelaInicialActivity extends AppCompatActivity {
                                     }
                                     if(drawerItem.getIdentifier() == 2){
                                         intent = new Intent(TelaInicialActivity.this, PerfilActivity.class);
+                                    }
+                                    if(drawerItem.getIdentifier() == 3){
+                                        intent = new Intent(TelaInicialActivity.this, CriarEventoActivity.class );
                                     }
                                     if (intent != null) {
                                         TelaInicialActivity.this.startActivity(intent);
@@ -87,6 +92,8 @@ public class TelaInicialActivity extends AppCompatActivity {
         result.addStickyFooterItem(new PrimaryDrawerItem().withName("Sair"));
 
         mAuth = FirebaseAuth.getInstance();
+
+        /*
         if (mAuth.getCurrentUser() != null) {
             mDatabase = FirebaseDatabase.getInstance().getReference().child("usuarios");
             //vai no banco de dados e pega o filho correspondente ao UID do usuario logado
@@ -103,7 +110,7 @@ public class TelaInicialActivity extends AppCompatActivity {
                 startActivity(mapsActivity);
 
             }
-        });
+        }); */
     }
 
 
